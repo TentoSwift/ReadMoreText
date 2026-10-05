@@ -128,3 +128,7 @@ xcodebuild test -project Demo/ReadMoreDemo.xcodeproj -scheme ReadMoreDemo \
 - Simulator UIテスト3件で通常・タップ・画像背景・幅変更・Dynamic Type・短文・長文復帰・回転、色/明度のLight/Dark切替、本文タップ切替と二重通知防止、UIScrollViewでのtap/panを操作
 
 実機、iOS16上の実行、VoiceOver実操作、本番UITableView/UICollectionView画面での統合テストは未実施です。セル制約の検証はUIViewを使ったencapsulated height相当のrequired拘束までです。
+
+## ライセンス
+
+[MIT License](LICENSE) — Copyright (c) 2026 TentoSwift.
