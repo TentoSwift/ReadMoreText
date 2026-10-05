@@ -1,0 +1,41 @@
+name: ReadMoreDemo
+options:
+  deploymentTarget:
+    iOS: "16.0"
+packages:
+  ReadMoreText:
+    path: ..
+settings:
+  base:
+    CODE_SIGNING_ALLOWED: NO
+    SWIFT_VERSION: "5.9"
+targets:
+  ReadMoreDemo:
+    type: application
+    platform: iOS
+    sources: [App]
+    dependencies:
+      - package: ReadMoreText
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.example.ReadMoreDemo
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
+        INFOPLIST_KEY_CFBundleDisplayName: ReadMore Demo
+  ReadMoreDemoUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources: [UITests]
+    dependencies:
+      - target: ReadMoreDemo
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.example.ReadMoreDemoUITests
+        GENERATE_INFOPLIST_FILE: YES
+schemes:
+  ReadMoreDemo:
+    build:
+      targets:
+        ReadMoreDemo: all
+    test:
+      targets: [ReadMoreDemoUITests]
